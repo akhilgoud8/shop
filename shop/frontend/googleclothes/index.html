@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion — ShopZen</title>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/frontend/googleclothes/style.css">
+</head>
+<body>
+
+<div id="shell"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Wear Your Story</div>
+    <h1>Fashion For Every<br>Season, Every Size</h1>
+    <p>Everyday essentials to statement pieces — refreshed weekly.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('productsGrid').scrollIntoView({behavior:'smooth'})">Shop Fashion →</button>
+      <a href="/frontend/main/index.html" class="btn-outline">← Back to All Products</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-thumb big">👗</div>
+    <div class="hero-thumb">👕</div>
+    <div class="hero-thumb">👟</div>
+    <div class="hero-thumb">🧥</div>
+    <div class="hero-thumb">👜</div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">👗 Fashion</h2>
+    <span class="see-all" onclick="location.reload()">Refresh →</span>
+  </div>
+  <div class="products-row" id="productsGrid">
+    <div class="loading-state">Loading products…</div>
+  </div>
+</div>
+
+<!-- PROMO -->
+<div class="promo-grid">
+  <div class="promo-card promo-blue">
+    <div>
+      <h3>Prime Membership</h3>
+      <p>Unlimited free delivery, exclusive deals &amp; more.</p>
+      <span class="promo-link">Start 30-day free trial →</span>
+    </div>
+    <span class="promo-icon">⭐</span>
+  </div>
+  <div class="promo-card promo-amber">
+    <div>
+      <h3>Today's Deals</h3>
+      <p>Lightning deals updated every hour. Don't miss out!</p>
+      <span class="promo-link">Shop deals →</span>
+    </div>
+    <span class="promo-icon">⚡</span>
+  </div>
+  <div class="promo-card promo-green">
+    <div>
+      <h3>Sell on ShopZen</h3>
+      <p>Reach crores of customers. Start selling today.</p>
+      <span class="promo-link">Become a seller →</span>
+    </div>
+    <span class="promo-icon">📦</span>
+  </div>
+</div>
+
+<div id="siteFooter"></div>
+
+<script src="/frontend/googleclothes/script.js"></script>
+</body>
+</html>

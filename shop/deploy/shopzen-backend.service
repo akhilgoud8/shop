@@ -1,0 +1,42 @@
+# /etc/systemd/system/shopzen-backend.service
+#
+# Deploy this on the BACKEND EC2 instance. Runs the Flask app with
+# Gunicorn (production WSGI server) instead of `python3 app.py`'s
+# built-in development server.
+#
+# Setup:
+#   sudo cp shopzen-backend.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable shopzen-backend
+#   sudo systemctl start shopzen-backend
+#   sudo systemctl status shopzen-backend       # check it's running
+#   sudo journalctl -u shopzen-backend -f       # tail its logs
+
+[Unit]
+Description=ShopZen Flask backend (Gunicorn)
+After=network.target
+
+[Service]
+# Adjust to whichever Linux user should own this process (not root).
+User=ec2-user
+Group=ec2-user
+
+# Path where you deployed the backend/ folder on this EC2 instance.
+WorkingDirectory=/home/ec2-user/Projectaws/backend
+EnvironmentFile=/home/ec2-user/Projectaws/backend/.env
+
+# 3 worker processes is a reasonable start for a small instance
+# (t3.micro/small); increase roughly to (2 x CPU cores) + 1 on bigger boxes.
+ExecStart=/home/ec2-user/Projectaws/backend/venv/bin/gunicorn \
+    --workers 3 \
+    --bind 0.0.0.0:5000 \
+    --timeout 30 \
+    --access-logfile /home/ec2-user/Projectaws/backend/access.log \
+    --error-logfile /home/ec2-user/Projectaws/backend/error.log \
+    app:app
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

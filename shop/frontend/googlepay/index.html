@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopZen Pay — Wallet &amp; Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/frontend/googlepay/style.css">
+</head>
+<body>
+
+<div id="shell"></div>
+
+<!-- HERO -->
+<section class="hero" style="min-height:220px">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Fast, Secure, Yours</div>
+    <h1>ShopZen Pay</h1>
+    <p>Pay, top up, and track every rupee — all in one wallet.</p>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-thumb big">💳</div>
+    <div class="hero-thumb">💰</div>
+    <div class="hero-thumb">🏦</div>
+    <div class="hero-thumb">📊</div>
+    <div class="hero-thumb">🔒</div>
+  </div>
+</section>
+
+<div class="pay-wrap">
+  <!-- LEFT COLUMN -->
+  <div>
+    <div class="pay-balance-card">
+      <div class="label">Wallet Balance</div>
+      <div class="amount" id="walletBalance">₹0</div>
+    </div>
+
+    <div class="pay-card" style="margin-bottom:20px">
+      <h3>🛒 Checkout Cart</h3>
+      <div id="checkoutSummary"></div>
+      <button class="btn-primary" style="width:100%;margin-top:14px" onclick="payNow()">Pay Now →</button>
+      <div id="payStatus" style="margin-top:10px;font-size:13px"></div>
+    </div>
+
+    <div class="pay-card">
+      <h3>📜 Recent Transactions</h3>
+      <div id="txnList"></div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div>
+    <div class="pay-card" style="margin-bottom:20px">
+      <h3>💳 Saved Payment Methods</h3>
+      <div id="methodsList"></div>
+    </div>
+
+    <div class="pay-card pay-form">
+      <h3>➕ Add Money</h3>
+      <label for="addAmount">Amount (₹)</label>
+      <input type="number" id="addAmount" placeholder="e.g. 1000" min="1">
+      <label for="addMethod">Payment method</label>
+      <select id="addMethod">
+        <option>UPI</option>
+        <option>Debit Card</option>
+        <option>Credit Card</option>
+        <option>Net Banking</option>
+      </select>
+      <button class="btn-primary" style="width:100%" onclick="addMoney()">Add to Wallet</button>
+    </div>
+  </div>
+</div>
+
+<div id="siteFooter"></div>
+
+<script src="/frontend/googlepay/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — ShopZen</title>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/frontend/auth/style.css">
+<style>
+  .auth-wrap { max-width: 380px; margin: 60px auto; padding: 0 20px; }
+  .auth-card { background: var(--card-bg); border: 1px solid var(--warm-gray); border-radius: 14px; box-shadow: var(--shadow); padding: 32px 28px; }
+  .auth-card h1 { font-family: 'Bitter', serif; font-size: 24px; margin-bottom: 6px; }
+  .auth-card .sub { color: var(--mid-gray); font-size: 13px; margin-bottom: 22px; }
+  .auth-error { background: #fdecea; color: var(--red); font-size: 13px; padding: 10px 12px; border-radius: 6px; margin-bottom: 14px; display: none; }
+  .auth-switch { text-align: center; font-size: 13px; color: var(--mid-gray); margin-top: 16px; }
+  .auth-switch a { color: #1a6ea8; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div id="shell"></div>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <h1>Sign In</h1>
+    <p class="sub">Welcome back to ShopZen.</p>
+    <div class="auth-error" id="authError"></div>
+    <form class="pay-form" id="loginForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" required placeholder="you@example.com">
+      <label for="password">Password</label>
+      <input type="password" id="password" required placeholder="••••••••">
+      <button class="btn-primary" type="submit" style="width:100%;margin-top:6px">Sign In →</button>
+    </form>
+    <div class="auth-switch">New to ShopZen? <a href="/frontend/auth/signup.html">Create an account</a></div>
+  </div>
+</div>
+
+<div id="siteFooter"></div>
+
+<script src="/frontend/auth/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopZen — Everything, Everywhere</title>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/frontend/main/style.css">
+</head>
+<body>
+
+<div id="shell"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Summer Sale 2026</div>
+    <h1>Shop Smarter,<br>Live Better</h1>
+    <p>Millions of products, unbeatable prices, delivered to your doorstep. Free delivery on orders over ₹499.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('productsGrid').scrollIntoView({behavior:'smooth'})">Explore Deals →</button>
+      <a href="/frontend/googlepay/index.html" class="btn-outline">Join Prime ★</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-thumb big">📱</div>
+    <div class="hero-thumb">👟</div>
+    <div class="hero-thumb">🎧</div>
+    <div class="hero-thumb">📚</div>
+    <div class="hero-thumb">🏠</div>
+  </div>
+</section>
+
+<!-- DEALS TICKER -->
+<div class="deals-ticker">
+  <div class="ticker-inner" id="ticker">
+    <div class="ticker-item"><span>⚡</span> Up to 70% off Electronics</div>
+    <div class="ticker-item"><span>🏷️</span> Fashion Sale — Min 40% off</div>
+    <div class="ticker-item"><span>📦</span> Free Delivery on orders ₹499+</div>
+    <div class="ticker-item"><span>⭐</span> Prime members get extra 10% off</div>
+    <div class="ticker-item"><span>🎁</span> Buy 2 Get 1 Free on Books</div>
+    <div class="ticker-item"><span>🔥</span> Flash Deals end tonight</div>
+    <div class="ticker-item"><span>⚡</span> Up to 70% off Electronics</div>
+    <div class="ticker-item"><span>🏷️</span> Fashion Sale — Min 40% off</div>
+    <div class="ticker-item"><span>📦</span> Free Delivery on orders ₹499+</div>
+    <div class="ticker-item"><span>⭐</span> Prime members get extra 10% off</div>
+    <div class="ticker-item"><span>🎁</span> Buy 2 Get 1 Free on Books</div>
+    <div class="ticker-item"><span>🔥</span> Flash Deals end tonight</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">Shop by Category</h2>
+    <span class="see-all">See all categories →</span>
+  </div>
+  <div class="cat-grid">
+    <a class="cat-card" href="/frontend/phones/index.html"><div class="cat-icon">📱</div><div class="cat-name">Mobiles</div></a>
+    <a class="cat-card" href="/frontend/computers/index.html"><div class="cat-icon">💻</div><div class="cat-name">Laptops</div></a>
+    <a class="cat-card" href="/frontend/googleclothes/index.html"><div class="cat-icon">👗</div><div class="cat-name">Fashion</div></a>
+    <a class="cat-card" href="/frontend/electronics/index.html"><div class="cat-icon">🏠</div><div class="cat-name">Home &amp; Kitchen</div></a>
+    <a class="cat-card" href="/frontend/googlemusic/index.html"><div class="cat-icon">🎸</div><div class="cat-name">Music</div></a>
+    <a class="cat-card" href="/frontend/electronics/index.html"><div class="cat-icon">🎮</div><div class="cat-name">Gaming</div></a>
+    <a class="cat-card" href="/frontend/earphones/index.html"><div class="cat-icon">🎧</div><div class="cat-name">Audio</div></a>
+    <a class="cat-card" href="/frontend/googlegrocery/index.html"><div class="cat-icon">🌿</div><div class="cat-name">Grocery</div></a>
+    <a class="cat-card" href="/frontend/googlepay/index.html"><div class="cat-icon">💳</div><div class="cat-name">ShopZen Pay</div></a>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">Best Sellers</h2>
+    <span class="see-all">View all →</span>
+  </div>
+  <div class="products-row" id="productsGrid">
+    <div class="loading-state">Loading products…</div>
+  </div>
+</div>
+
+<!-- PROMO BANNERS -->
+<div class="promo-grid">
+  <div class="promo-card promo-blue">
+    <div>
+      <h3>Prime Membership</h3>
+      <p>Unlimited free delivery, exclusive deals &amp; more.</p>
+      <span class="promo-link">Start 30-day free trial →</span>
+    </div>
+    <span class="promo-icon">⭐</span>
+  </div>
+  <div class="promo-card promo-amber">
+    <div>
+      <h3>Today's Deals</h3>
+      <p>Lightning deals updated every hour. Don't miss out!</p>
+      <span class="promo-link">Shop deals →</span>
+    </div>
+    <span class="promo-icon">⚡</span>
+  </div>
+  <div class="promo-card promo-green">
+    <div>
+      <h3>Sell on ShopZen</h3>
+      <p>Reach crores of customers. Start selling today.</p>
+      <span class="promo-link">Become a seller →</span>
+    </div>
+    <span class="promo-icon">📦</span>
+  </div>
+</div>
+
+<!-- FLASH DEALS -->
+<div class="section">
+  <div class="flash-header">
+    <h2 class="flash-title">⚡ Flash Deals</h2>
+    <div class="countdown" id="countdown">02:47:33</div>
+    <span class="see-all" style="margin-left:auto">All deals →</span>
+  </div>
+  <div class="products-row" id="dealsGrid"></div>
+</div>
+
+<!-- RECOMMENDATIONS -->
+<div class="section">
+  <div class="section-header">
+    <h2 class="section-title">Inspired by Your Browsing</h2>
+    <span class="see-all">More →</span>
+  </div>
+  <div class="mini-cards" id="miniGrid"></div>
+</div>
+
+<div id="siteFooter"></div>
+
+<script src="/frontend/main/script.js"></script>
+</body>
+</html>
